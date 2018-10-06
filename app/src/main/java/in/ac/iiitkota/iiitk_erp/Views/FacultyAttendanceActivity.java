@@ -1,9 +1,11 @@
-package in.ac.iiitkota.iiitk_erp;
+package in.ac.iiitkota.iiitk_erp.Views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AttendanceActivity extends AppCompatActivity {
+import in.ac.iiitkota.iiitk_erp.R;
+
+public class FacultyAttendanceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

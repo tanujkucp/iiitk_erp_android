@@ -1,5 +1,6 @@
 package in.ac.iiitkota.iiitk_erp.Views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         //get all the values from the views
         getValues();
         //todo call authentication api with the values to login
-
+        this.startActivity(new Intent(this,MainActivity.class));
         //resolve the result returned
     }
 

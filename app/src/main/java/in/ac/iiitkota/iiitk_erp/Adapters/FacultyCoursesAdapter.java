@@ -1,5 +1,9 @@
 package in.ac.iiitkota.iiitk_erp.Adapters;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,11 +11,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import in.ac.iiitkota.iiitk_erp.R;
+import in.ac.iiitkota.iiitk_erp.Views.FacultyAttendanceActivity;
 
 public class FacultyCoursesAdapter extends RecyclerView.Adapter<FacultyCoursesAdapter.ViewHolder> {
     //todo initialize data needed
+    Context context;
+    int arr[];
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public  class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView course_id, course_name, num_students;
 
         public ViewHolder(View v) {
@@ -19,6 +26,13 @@ public class FacultyCoursesAdapter extends RecyclerView.Adapter<FacultyCoursesAd
             course_id = (TextView) v.findViewById(R.id.course_id);
             course_name = (TextView) v.findViewById(R.id.course_name);
             num_students = (TextView) v.findViewById(R.id.num_students);
+
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view){
+                    context.startActivity(new Intent(context,FacultyAttendanceActivity.class));
+                }
+            });
         }
 
         public TextView getCourse_id() {
@@ -39,7 +53,9 @@ public class FacultyCoursesAdapter extends RecyclerView.Adapter<FacultyCoursesAd
      * <p>
      * String[] containing the data to populate views to be used by RecyclerView.
      */
-    public FacultyCoursesAdapter() {
+    public FacultyCoursesAdapter(Context context,int arr[]) {
+        this.context=context;
+        this.arr=arr;
         //todo get the data from constructor and assign here
     }
 
@@ -65,7 +81,7 @@ public class FacultyCoursesAdapter extends RecyclerView.Adapter<FacultyCoursesAd
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return 1;
+        return arr.length;
         //todo return info.size();
     }
 }

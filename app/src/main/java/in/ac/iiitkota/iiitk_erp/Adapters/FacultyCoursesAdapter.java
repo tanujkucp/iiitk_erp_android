@@ -30,6 +30,7 @@ public class FacultyCoursesAdapter extends RecyclerView.Adapter<FacultyCoursesAd
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view){
+                    //todo pass the values of batchID, teacher username
                     context.startActivity(new Intent(context,FacultyAttendanceActivity.class));
                 }
             });

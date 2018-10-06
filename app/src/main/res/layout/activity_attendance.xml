@@ -4,25 +4,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Views.FacultyAttendanceActivity">
+<GridLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="3dp"
+    android:columnCount="2"
+    android:id="@+id/button_layout"
+    android:layout_height="wrap_content">
+    <Button
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:id="@+id/all_Present"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="allPresent"
+        android:text="All Present" />
+
+    <Button
+        android:id="@+id/all_Absent"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="allAbsent"
+        android:text="All Absent" />
+</GridLayout>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/students"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+       android:layout_below="@id/button_layout"
         android:layout_marginHorizontal="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="35dp" />
+        android:layout_marginBottom="40dp" />
 
     <TextView
         android:id="@+id/poll_status"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:background="@color/green600"
         android:gravity="center"
-        android:text="x/54 Marked"
+        android:text="0/0 Marked"
+        android:onClick="uploadAttendance"
         android:textColor="@color/black"
-
-        android:textSize="20sp" />
+        android:textSize="25sp" />
 
 </RelativeLayout>

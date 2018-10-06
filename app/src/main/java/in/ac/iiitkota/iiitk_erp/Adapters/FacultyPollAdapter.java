@@ -7,11 +7,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import in.ac.iiitkota.iiitk_erp.R;
 
 public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.ViewHolder> {
-    //todo initialize data needed
+    //initialize data needed
     public FacultyPollAdapterListener listener;
+    ArrayList<String> IDs,names;
 
     public  class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView student;
@@ -23,7 +26,7 @@ public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.
             present=v.findViewById(R.id.present);
             absent=v.findViewById(R.id.absent);
             leave=v.findViewById(R.id.leave);
-            //todo handle clicks on buttons
+            // handle clicks on buttons
             present.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -55,9 +58,10 @@ public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.
      * <p>
      * String[] containing the data to populate views to be used by RecyclerView.
      */
-    public FacultyPollAdapter(FacultyPollAdapterListener lis) {
+    public FacultyPollAdapter(ArrayList<String> IDs,ArrayList<String> names,FacultyPollAdapterListener lis) {
         this.listener=lis;
-        //todo get the data from constructor and assign here
+        this.IDs=IDs;
+        this.names=names;
     }
 
     // Create new views (invoked by the layout manager)
@@ -66,7 +70,6 @@ public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.
         // Create a new view.
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.card_faculty_poll, viewGroup, false);
-
         return new ViewHolder(v);
     }
 
@@ -75,7 +78,7 @@ public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.
     public void onBindViewHolder(ViewHolder viewHolder, final int pos) {
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
-        //todo viewHolder.getNameView();
+        viewHolder.getStudent().setText(IDs.get(pos)+" | "+names.get(pos));
     }
 
     public interface FacultyPollAdapterListener{
@@ -87,7 +90,6 @@ public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return 4;
-        //todo return info.size();
+        return IDs.size();
     }
 }

@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import in.ac.iiitkota.iiitk_erp.Adapters.FacultyCoursesAdapter;
+import in.ac.iiitkota.iiitk_erp.Others.DBHelper;
+import in.ac.iiitkota.iiitk_erp.Others.MyToast;
 import in.ac.iiitkota.iiitk_erp.R;
 
 public class FacultyDashboardFragment extends Fragment {
 
     RecyclerView recyclerCourses;
+    DBHelper dbHelper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +36,9 @@ public class FacultyDashboardFragment extends Fragment {
         int arr[]={1,2,3,4};
         recyclerCourses.setAdapter(new FacultyCoursesAdapter(getActivity(),arr));
 
+        dbHelper=new DBHelper(getActivity(),null,1);
+        findBackup();
+
         return v;
     }
 
@@ -40,7 +46,15 @@ public class FacultyDashboardFragment extends Fragment {
         //todo call an API with the faculty ID to fetch the courses taught by him/her
 
         //todo resolve the result received
+    }
 
+    public void findBackup(){
+        int count= dbHelper.getCount();
+        //todo fetch course id and faculty username from sharedPreferences
+        if (count>0){
+            //todo show the backup found card and options to clear or countinue
+            new MyToast(getActivity(),"Backup found : "+count+" entries").show();
+        }
     }
 
 

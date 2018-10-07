@@ -18,7 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE BACKUP ( _ID INTEGER PRIMARY KEY AUTOINCREMENT, "+COLUMN_ID
+        sqLiteDatabase.execSQL("CREATE TABLE BACKUP ( _ID INTEGER PRIMARY KEY , "+COLUMN_ID
                 +" TEXT NOT NULL, "+COLUMN_VALUE+" INT NOT NULL )");
     }
 
@@ -30,7 +30,6 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public int deleteBackup(){
-        //todo add try-catch checks
         SQLiteDatabase db = getWritableDatabase();
         int num=db.delete(TABLE_NAME,null,null);
         db.close();

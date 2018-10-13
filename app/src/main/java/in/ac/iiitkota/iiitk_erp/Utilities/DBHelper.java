@@ -1,4 +1,4 @@
-package in.ac.iiitkota.iiitk_erp.Others;
+package in.ac.iiitkota.iiitk_erp.Utilities;
 
 import android.content.ContentValues;
 import android.content.Context;

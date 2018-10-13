@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import in.ac.iiitkota.iiitk_erp.Adapters.FacultyPollAdapter;
-import in.ac.iiitkota.iiitk_erp.Modals.PollStudent;
-import in.ac.iiitkota.iiitk_erp.Others.DBHelper;
-import in.ac.iiitkota.iiitk_erp.Others.MyToast;
+import in.ac.iiitkota.iiitk_erp.Models.PollStudent;
+import in.ac.iiitkota.iiitk_erp.Utilities.DBHelper;
+import in.ac.iiitkota.iiitk_erp.Utilities.MyToast;
 import in.ac.iiitkota.iiitk_erp.R;
 
 public class FacultyAttendanceActivity extends AppCompatActivity {
@@ -103,6 +103,7 @@ public class FacultyAttendanceActivity extends AppCompatActivity {
         pollStatus.setText("Uploaded Successfully.");
         allClear();
         data.clear();
+        counter=0;
 //        SharedPreferences.Editor editor=backupPref.edit();
 //        editor.remove("course");
 //        editor.remove("faculty");

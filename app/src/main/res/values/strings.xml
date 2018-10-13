@@ -1,5 +1,6 @@
+<!DOCTYPE resources [<!ENTITY server "192.168.42.39:3000/">]>
 <resources>
-    <string name="app_name">iiitk_erp_android</string>
+    <string name="app_name">IIITK ERP</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -9,4 +10,17 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="error">An error occurred!</string>
+    <string name="invalid_credentials">Invalid credentials!</string>
+
+    <!--URLs for API services-->
+    <string name="url_login">http://&server;service/authenticate/login</string>
+    <string name="url_register">http://&server;service/authenticate/register</string>
+    <string name="url_forgot">http://&server;service/authenticate/forgotPassword</string>
+    <string name="url_logout">http://&server;service/authenticate/logout</string>
+    <string name="url_reset">http://&server;service/authenticate/resetPassword</string>
+    <string name="url_updateProfile">http://&server;service/authenticate/updateProfile</string>
+    <string name="url_getProfile">http://&server;service/authenticate/getProfile</string>
+
 </resources>

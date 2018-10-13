@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import in.ac.iiitkota.iiitk_erp.Modals.PollStudent;
-import in.ac.iiitkota.iiitk_erp.Others.StudentDiffCallback;
+import in.ac.iiitkota.iiitk_erp.Models.PollStudent;
+import in.ac.iiitkota.iiitk_erp.Utilities.StudentDiffCallback;
 import in.ac.iiitkota.iiitk_erp.R;
 
 public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.ViewHolder> {
@@ -111,6 +111,7 @@ public class FacultyPollAdapter extends RecyclerView.Adapter<FacultyPollAdapter.
     }
 
     public interface FacultyPollAdapterListener {
+
         void onClickPresent(View v, int position);
 
         void onClickAbsent(View v, int position);

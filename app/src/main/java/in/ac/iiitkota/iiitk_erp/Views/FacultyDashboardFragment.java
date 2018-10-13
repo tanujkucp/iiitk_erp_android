@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import in.ac.iiitkota.iiitk_erp.Adapters.FacultyCoursesAdapter;
-import in.ac.iiitkota.iiitk_erp.Others.DBHelper;
-import in.ac.iiitkota.iiitk_erp.Others.MyToast;
+import in.ac.iiitkota.iiitk_erp.Utilities.DBHelper;
+import in.ac.iiitkota.iiitk_erp.Utilities.MyToast;
 import in.ac.iiitkota.iiitk_erp.R;
 
 public class FacultyDashboardFragment extends Fragment {

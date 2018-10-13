@@ -1,4 +1,4 @@
-package in.ac.iiitkota.iiitk_erp.Modals;
+package in.ac.iiitkota.iiitk_erp.Models;
 
 public class PollStudent {
     String id, name;

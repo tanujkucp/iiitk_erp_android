@@ -1,11 +1,11 @@
-package in.ac.iiitkota.iiitk_erp.Others;
+package in.ac.iiitkota.iiitk_erp.Utilities;
 
 import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;
 
 import java.util.List;
 
-import in.ac.iiitkota.iiitk_erp.Modals.PollStudent;
+import in.ac.iiitkota.iiitk_erp.Models.PollStudent;
 
 public class StudentDiffCallback extends DiffUtil.Callback {
 

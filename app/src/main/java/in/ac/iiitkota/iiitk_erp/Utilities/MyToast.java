@@ -1,4 +1,4 @@
-package in.ac.iiitkota.iiitk_erp.Others;
+package in.ac.iiitkota.iiitk_erp.Utilities;
 
 //Made by Tanuj
 import android.app.Activity;

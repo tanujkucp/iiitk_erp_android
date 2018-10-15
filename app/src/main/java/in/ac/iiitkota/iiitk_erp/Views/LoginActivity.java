@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 
 import com.google.gson.Gson;
 
@@ -21,9 +20,9 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 
 import in.ac.iiitkota.iiitk_erp.Models.User;
-import in.ac.iiitkota.iiitk_erp.Models.UserData;
 import in.ac.iiitkota.iiitk_erp.R;
 import in.ac.iiitkota.iiitk_erp.Utilities.MyToast;
+import in.ac.iiitkota.iiitk_erp.Utilities.Preferences;
 import in.ac.iiitkota.iiitk_erp.Utilities.Server;
 
 public class LoginActivity extends AppCompatActivity {
@@ -95,12 +94,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (obj.getBoolean("success")){
                     JSONArray array=obj.getJSONArray("data");
                     JSONObject data = array.getJSONObject(0);
-                    UserData.getInstance(getApplicationContext()).initUserData(new User(data), getApplicationContext());
+                    Preferences.initUser(LoginActivity.this,new User(data));
                     return true;
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
             return false;
@@ -118,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             } else {
                 new MyToast(LoginActivity.this,getString(R.string.error),false).show();
+                viewPassword.setText("");
             }
         }
     }

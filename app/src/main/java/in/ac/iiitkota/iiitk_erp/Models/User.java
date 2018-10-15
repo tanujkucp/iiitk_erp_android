@@ -2,12 +2,8 @@ package in.ac.iiitkota.iiitk_erp.Models;
 
 import android.util.Log;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Date;
-import java.util.Objects;
 
 public class User {
 
@@ -35,6 +31,23 @@ public class User {
     }
 
     public User() { }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "_id='" + _id + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", middlename='" + middlename + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", fathername='" + fathername + '\'' +
+                ", mothername='" + mothername + '\'' +
+                ", permanent_address='" + permanent_address + '\'' +
+                ", role='" + role + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", created_at='" + created_at + '\'' +
+                '}';
+    }
 
     @Override
     public boolean equals(Object o) {

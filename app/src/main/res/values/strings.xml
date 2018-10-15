@@ -1,4 +1,4 @@
-<!DOCTYPE resources [<!ENTITY server "192.168.42.39:3000/">]>
+<!DOCTYPE resources [<!ENTITY server "192.168.42.39:3000/">,<!ENTITY website "www.iiitkota.ac.in/">]>
 <resources>
     <string name="app_name">IIITK ERP</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -22,5 +22,8 @@
     <string name="url_reset">http://&server;service/authenticate/resetPassword</string>
     <string name="url_updateProfile">http://&server;service/authenticate/updateProfile</string>
     <string name="url_getProfile">http://&server;service/authenticate/getProfile</string>
+
+    <string name="url_events">http://&website;service/event/getEvent</string>
+    <string name="url_news">http://&website;service/news/getNews</string>
 
 </resources>

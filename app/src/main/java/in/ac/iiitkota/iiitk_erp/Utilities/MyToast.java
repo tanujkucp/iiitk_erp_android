@@ -1,5 +1,4 @@
 package in.ac.iiitkota.iiitk_erp.Utilities;
-
 //Made by Tanuj
 import android.app.Activity;
 import android.graphics.Color;
@@ -23,6 +22,7 @@ public class MyToast {
         this.length=length;
         this.isPositive=isPositive;
     }
+
 
     public MyToast(Activity cont,String message,int length){
         this(cont,message,length,true);

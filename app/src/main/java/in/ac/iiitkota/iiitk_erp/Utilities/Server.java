@@ -25,13 +25,22 @@ public class Server {
         return response.body().string();
     }
 
+    public static String post(String url) throws IOException {
+        RequestBody body = RequestBody.create(JSON, "");
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return  response.body().string();
+    }
 
-    public static String get(String url) throws IOException {
+    public  static String get(String url) throws IOException {
         Request request = new Request.Builder()
                 .url(url)
                 .build();
         Response response = client.newCall(request).execute();
-        return response.body().string();
+        return  response.body().string();
     }
 
 }

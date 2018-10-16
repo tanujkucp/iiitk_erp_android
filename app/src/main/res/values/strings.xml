@@ -1,4 +1,4 @@
-<!DOCTYPE resources [<!ENTITY server "192.168.42.39:3000/">,<!ENTITY website "www.iiitkota.ac.in/">]>
+<!DOCTYPE resources [<!ENTITY server "192.168.42.39:3000/"> <!ENTITY website "www.iiitkota.ac.in/">]>
 <resources>
     <string name="app_name">IIITK ERP</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

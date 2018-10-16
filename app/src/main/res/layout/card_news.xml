@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="3dp"
+    android:elevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Invitation for Nomination of Vayoshrestha Samman 2018"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2018-04-30"
+            android:layout_marginLeft="5dp"
+            android:textSize="15sp"
+            android:layout_below="@id/title"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/date"
+            android:background="#f0f0f0"
+            android:layout_height="2dp"/>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IIIT Kota celebrated International Yoga Day on June 21, 2017 in MNIT Jaipur Campus. How to avoid stress in present day circumstances and stress management in general were discussed."
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_below="@id/date"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description"
+            android:textAllCaps="false"
+            android:singleLine="true"
+            android:text="Download the Invitation here"
+            android:ellipsize="end"
+            />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -3,6 +3,7 @@
     package="in.ac.iiitkota.iiitk_erp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"

@@ -3,6 +3,7 @@ package in.ac.iiitkota.iiitk_erp.Views;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ import in.ac.iiitkota.iiitk_erp.Utilities.Server;
 public class LoginActivity extends AppCompatActivity {
 
     String username,password;
-    EditText viewUsername,viewPassword;
+    TextInputEditText viewUsername,viewPassword;
     ProgressDialog progress;
 
     @Override

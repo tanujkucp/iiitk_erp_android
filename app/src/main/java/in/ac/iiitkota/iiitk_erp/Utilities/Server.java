@@ -1,7 +1,12 @@
 package in.ac.iiitkota.iiitk_erp.Utilities;
 
+import android.content.Context;
+import android.util.Log;
+
+import java.io.File;
 import java.io.IOException;
 
+import okhttp3.Cache;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -12,9 +17,19 @@ public class Server {
 
     public static final MediaType JSON
             = MediaType.parse("application/json; charset=utf-8");
-    public static OkHttpClient client = new OkHttpClient();
+    public  OkHttpClient client = new OkHttpClient();
 
-    public static String post(String url, String json) throws IOException {
+    public Server(Context context){
+        int cacheSize = 10 * 1024 * 1024; // 10 MiB
+        File cacheDirectory=context.getCacheDir();
+        Cache cache = new Cache(cacheDirectory, cacheSize);
+
+        client = new OkHttpClient.Builder()
+                .cache(cache)
+                .build();
+    }
+
+    public  String post(String url, String json) throws IOException {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
                 .url(url)
@@ -25,21 +40,27 @@ public class Server {
         return response.body().string();
     }
 
-    public static String post(String url) throws IOException {
+    public String post(String url) throws IOException {
         RequestBody body = RequestBody.create(JSON, "");
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)
+                .header("Cache-Control","max-stale=3600")
                 .build();
         Response response = client.newCall(request).execute();
+        Log.d("Server", "response.cacheResponse():" + response.cacheResponse());
+        Log.d("Server", "response.networkResponse():" + response.networkResponse());
         return  response.body().string();
     }
 
-    public  static String get(String url) throws IOException {
+    public  String get(String url) throws IOException {
         Request request = new Request.Builder()
                 .url(url)
+                .header("Cache-Control","max-stale=3600")
                 .build();
         Response response = client.newCall(request).execute();
+        Log.d("Server", "response.cacheResponse():" + response.cacheResponse());
+        Log.d("Server", "response.networkResponse():" + response.networkResponse());
         return  response.body().string();
     }
 

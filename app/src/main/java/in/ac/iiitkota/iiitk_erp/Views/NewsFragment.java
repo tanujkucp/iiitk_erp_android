@@ -44,17 +44,22 @@ public class NewsFragment extends Fragment {
         recycler = v.findViewById(R.id.news_recycler);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         //fetch Latest news from IIIT Kota website server
-        new NewsFetchTask().execute();
+        new NewsFetchTask(getActivity()).execute();
 
         return v;
     }
 
     class NewsFetchTask extends AsyncTask<String, String, ArrayList<News>> {
+        Context context;
+        public NewsFetchTask(Context con){
+            context=con;
+        }
+
         @Override
         protected ArrayList<News> doInBackground(String... strings) {
             try {
                 ArrayList<News> news=new ArrayList<>();
-                String result = Server.post(getResources().getString(R.string.url_news));
+                String result = new Server(context).post(getResources().getString(R.string.url_news));
                 JSONObject obj = new JSONObject(result);
                 if (obj.getBoolean("success")) {
                     JSONArray data= obj.getJSONArray("data");

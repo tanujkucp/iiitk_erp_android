@@ -41,17 +41,21 @@ public class EventsFragment extends Fragment {
         recycler = v.findViewById(R.id.events_recycler);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        new EventFetchTask().execute();
+        new EventFetchTask(getActivity()).execute();
 
         return v;
     }
 
     class EventFetchTask extends AsyncTask<String, String, ArrayList<Event>> {
+       Context context;
+       public EventFetchTask(Context con){
+           context=con;
+       }
         @Override
         protected ArrayList<Event> doInBackground(String... strings) {
             ArrayList<Event> events=new ArrayList<>();
             try {
-                String result=Server.get(getResources().getString(R.string.url_events));
+                String result=new Server(context).get(getResources().getString(R.string.url_events));
                 JSONObject obj = new JSONObject(result);
                 if (obj.getBoolean("success")) {
                     JSONArray data= obj.getJSONArray("data");

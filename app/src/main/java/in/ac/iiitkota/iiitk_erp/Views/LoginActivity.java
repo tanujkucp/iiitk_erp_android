@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 // network access.
                 Gson gson = new Gson();
                 String json = gson.toJson(map);
-                result = Server.post(getResources().getString(R.string.url_login),json);
+                result = new Server(LoginActivity.this).post(getResources().getString(R.string.url_login),json);
                 JSONObject obj=new JSONObject(result);
                 Log.e("result",result);
                 if (obj.getBoolean("success")){

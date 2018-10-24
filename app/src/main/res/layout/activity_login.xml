@@ -56,7 +56,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/t2"
         android:layout_marginTop="20dp"
-        android:text="Forgot password?"
+        android:text="Forgot password?xxxxxxxxxxxxxx"
         android:onClick="forgotPassword"/>
 
     <Button
